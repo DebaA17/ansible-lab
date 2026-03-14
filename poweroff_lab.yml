@@ -1,0 +1,9 @@
+- name: Power off all lab PCs
+  hosts: ubuntu_lab
+  become: yes
+  ignore_unreachable: yes   # skip unreachable hosts
+
+  tasks:
+    - name: Shutdown the machine
+      shell: shutdown now
+      ignore_errors: yes       # continue if shutdown fails (e.g., already off)

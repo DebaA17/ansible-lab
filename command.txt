@@ -1,0 +1,1 @@
+ansible-playbook -i inventory.ini poweroff_lab.yml -f 30 --ask-become-pass
