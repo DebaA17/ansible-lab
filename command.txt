@@ -1,1 +1,5 @@
+# Ping all lab PCs (connectivity test)
+ansible -i inventory.ini ubuntu_lab -m ping -f 30
+
+# Power off all lab PCs (requires sudo password)
 ansible-playbook -i inventory.ini poweroff_lab.yml -f 30 --ask-become-pass
