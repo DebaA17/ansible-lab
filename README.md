@@ -1,32 +1,43 @@
 # Ansible Lab Management
 
-Manage a classroom Ubuntu PC lab using Ansible inventory + playbooks (ping checks and mass shutdown).
-
 This repository contains **Ansible playbooks and inventory** for managing a lab of Ubuntu PCs (192.168.4.101–192.168.4.130). It allows you to run simple tasks like ping tests and perform mass operations such as powering off all machines.
 
 ---
 
 ## **Install Ansible**
 
-Install Ansible on your control machine (the system you run the commands from):
+Install Ansible on your control machine (the system you run the commands from).
+
+### Debian/Ubuntu
 
 ```bash
-# Debian/Ubuntu
 sudo apt update
 sudo apt install -y ansible
+```
 
-# Fedora
+### Fedora
+
+```bash
 sudo dnf install -y ansible
+```
 
-# Arch Linux
+### Arch Linux
+
+```bash
 sudo pacman -S ansible
+```
 
-# Locale (optional, helps avoid UTF-8/locale issues)
+### Locale (optional)
+
+```bash
 export LANG=en_US.UTF-8
 export LANGUAGE=en_US:en
 export LC_ALL=en_US.UTF-8
+```
 
-# Verify
+### Verify
+
+```bash
 ansible --version
 ```
 
@@ -66,4 +77,4 @@ ansible-playbook -i inventory.ini poweroff_lab.yml -f 30 --ask-become-pass
 
 ## **License**
 
-See `LICENSE`.
+See [LICENSE](LICENSE).
